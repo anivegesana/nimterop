@@ -305,7 +305,7 @@ proc getPreprocessor*(gState: State, fullpath: string) =
     pDir = sfile.expandFilename().parentDir()
     includeDirs: seq[string]
 
-  args.add @["-E", "-dD", getGccModeArg(gState.mode), "-w"]
+  args.add @["-std=c++17", "-E", "-dD", getGccModeArg(gState.mode), "-w"]
   if not gState.noComments:
     args.add "-CC"
 
